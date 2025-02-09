@@ -98,33 +98,32 @@ float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+// Everforest Dark Color Scheme
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	"#475258", /* black   */
+	"#e67e80", /* red     */
+	"#a7c080", /* green   */
+	"#dbbc7f", /* yellow  */
+	"#7fbbb3", /* blue    */
+	"#d699b6", /* magenta */
+	"#83c092", /* cyan    */
+	"#d3c6aa", /* white   */
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#475258", /* black   */
+	"#e67e80", /* red     */
+	"#a7c080", /* green   */
+	"#dbbc7f", /* yellow  */
+	"#7fbbb3", /* blue    */
+	"#d699b6", /* magenta */
+	"#83c092", /* cyan    */
+	"#d3c6aa", /* white   */
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	"#d3c6aa", /* default foreground colour */
+	"#2d353b", /* default background colour */
 };
 
 
