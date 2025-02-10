@@ -96,36 +96,37 @@ unsigned int tabspaces = 8;
 /* bg opacity */
 float alpha = 0.8;
 
+/* Background opacity */
+float alpha_def;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 // Everforest Dark Color Scheme
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	"#475258", /* black   */
+	"#e67e80", /* red     */
+	"#a7c080", /* green   */
+	"#dbbc7f", /* yellow  */
+	"#7fbbb3", /* blue    */
+	"#d699b6", /* magenta */
+	"#83c092", /* cyan    */
+	"#d3c6aa", /* white   */
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#475258", /* black   */
+	"#e67e80", /* red     */
+	"#a7c080", /* green   */
+	"#dbbc7f", /* yellow  */
+	"#7fbbb3", /* blue    */
+	"#d699b6", /* magenta */
+	"#83c092", /* cyan    */
+	"#d3c6aa", /* white   */
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	"#d3c6aa", /* default foreground colour */
+	"#2d353b", /* default background colour */
 };
 
 
@@ -133,8 +134,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
 unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
@@ -145,7 +146,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
@@ -205,6 +206,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ MODKEY,               XK_a,		chgalpha,       {.f = -1} }, /* Decrease opacity */
+	{ MODKEY,	        XK_s,  		chgalpha,       {.f = +1} }, /* Increase opacity */
+	{ MODKEY,               XK_d,		chgalpha,       {.f =  0} }, /* Reset opacity */
 };
 
 /*
